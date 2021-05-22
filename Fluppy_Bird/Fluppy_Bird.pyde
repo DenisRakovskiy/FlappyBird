@@ -13,9 +13,10 @@ def rectsCollide(x,y,w,h, x1,y1,w1,h1):
            check_collide(x,y, w, h , x1+w1, y1+h1)
 
 def setup() :
-    global chicken,truba1
+    global chicken,truba1,truba2
     chicken = loadImage(u'KURICA.png')
-    truba1 = loadImage(u'TRUBA.png')
+    truba1  = loadImage(u'TRUBA.png')
+    truba2 = loadImage(u'TRUBA2.png')
     size (500,500)     
     textSize(15)
     fill(0)
@@ -24,7 +25,7 @@ def draw():
     global x,t,x1,txt,y1
     x+=2
     x1-=2
-    background(255)
+    background('#03FFFD')
 
     fill(255,255,0)
     if (rectsCollide(x1,y1, 50, 1000 , 255 , x , 25,25) or rectsCollide(x1,y1+1080, 50, 1000 , 255 , x , 25,25)):
@@ -38,7 +39,7 @@ def draw():
     
     fill(0,255,0)
     image(truba1,x1,y1, 50, 1000)
-    rect(x1,y1 + 1080, 50, 1000)
+    image(truba2,x1,y1 + 1080, 50, 1000)
     textSize(20)
     fill("#8531B9")
     text( 'x:'+str(mouseX),0,30)
