@@ -13,6 +13,9 @@ def rectsCollide(x,y,w,h, x1,y1,w1,h1):
            check_collide(x,y, w, h , x1+w1, y1+h1)
 
 def setup() :
+    global chicken,truba1
+    chicken = loadImage(u'KURICA.png')
+    truba1 = loadImage(u'TRUBA.png')
     size (500,500)     
     textSize(15)
     fill(0)
@@ -29,11 +32,12 @@ def draw():
                 textSize(50)
                 text("GameOver",140,250)
                 x=1000
-    square(255,x,25)
+
+    image(chicken , 255,x , 25,25)
     
     
     fill(0,255,0)
-    rect(x1,y1, 50, 1000)
+    image(truba1,x1,y1, 50, 1000)
     rect(x1,y1 + 1080, 50, 1000)
     textSize(20)
     fill("#8531B9")
