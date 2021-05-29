@@ -3,6 +3,9 @@ x=255
 txt=0
 y1=-770
 state = 0
+f1=0
+true = 0
+false = 0
 
 def rectsCollide(x,y,w,h, x1,y1,w1,h1):
     def check_collide(x,y,w,h, x1,y1):
@@ -24,7 +27,7 @@ def setup() :
     fill(0)
     noStroke()
 def draw():
-    global x,t,x1,txt,y1,state
+    global x,t,x1,txt,y1,state,record,f1,true,false
     if state == 0:
         background(255)
         image(phone,250,200,255,255)
@@ -59,6 +62,7 @@ def draw():
         textSize(30)
         text("score:",0,90)
         text(txt,0,120)
+        text(record,0,240)
         fill('#3D40BC')
         if keyPressed:
             if key == "0":
@@ -78,6 +82,7 @@ def draw():
             x1=500
         if x1==160:
             txt+=1
+
     
 
     
